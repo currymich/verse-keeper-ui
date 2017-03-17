@@ -5,6 +5,7 @@
     <title>Verse Keeper</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.js"></script>
     <script type="text/javascript" src="js/factories/auth_interceptor.js"></script>
     <script type="text/javascript" src="js/factories/auth_token_factory.js"></script>
     <script type="text/javascript" src="js/controllers/home_controller.js"></script>
@@ -17,12 +18,14 @@
   </head>
   <body ng-controller="HomeController as home">
 
-    <nav ng-controller="VerseController as verse">
+    <nav>
       <h1>Verse Keeper</h1>
       <form ng-submit="verse.search(query)">
         <input placeholder="Search by verse" ng-model="query">
         <button type="submit">Search</button>
       </form>
+      <button ng-click="verse.fetchNow()">start</button>
+      <a ui-sref="saved" href="#" ng-show="home.currentUser">Saved Verses</a>
       <a ng-hide="home.currentUser" ui-sref="login">Login</a>
       <a href="#" ng-show="home.currentUser" ng-controller="AuthController as auth" ng-click="auth.logout()">Logout</a>
     </nav>

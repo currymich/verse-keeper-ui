@@ -1,7 +1,16 @@
 *, ::before, ::after {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
   font-size: 20px;
+}
+
+nav {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  width: 100%;
 }
