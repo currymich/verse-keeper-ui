@@ -5,18 +5,28 @@ function AuthController($http, $state, $scope,  AuthTokenFactory){
   function login(user){
     $http.post(`${server}/users/login`, {user})
     .then(function(response){
-      AuthTokenFactory.setToken(response.data.token)
-      $scope.$emit('userLoggedIn', response.data.user);
-      $state.go('home')
+      if(response.data.status == 201){
+        console.log(response.data.message)
+        AuthTokenFactory.setToken(response.data.token)
+        $scope.$emit('userLoggedIn', response.data.user);
+        $state.go('home')
+      } else {
+        console.log(response.data.message)
+      }
     })
   }
 
   function signup(user){
     $http.post(`${server}/users`, {user})
     .then(function(response){
-      AuthTokenFactory.setToken(response.data.token)
-      $scope.$emit('userLoggedIn', response.data.user)
-      $state.go('home')
+      if(response.data.status == 200) {
+        console.log(response.data.message)
+        AuthTokenFactory.setToken(response.data.token)
+        $scope.$emit('userLoggedIn', response.data.user)
+        $state.go('home')
+      } else {
+        console.log(response.data.message);
+      }
     })
   }
 
