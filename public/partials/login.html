@@ -2,10 +2,12 @@
 
   <form ng-submit="auth.login(user)">
     <label for="email">Username/Email</label>
-    <input type="text" name="email" ng-model="user.email">
+    <input type="text" name="email" ng-model="user.email" oninvalid="this.setCustomValidity('Please enter your username or email or click signup below')"
+    oninput="setCustomValidity('')" required>
 
     <label for="password">Password</label>
-    <input type="password" name="password" ng-model="user.password">
+    <input type="password" name="password" ng-model="user.password" oninvalid="this.setCustomValidity('Password cannot be left blank')"
+    oninput="setCustomValidity('')" required>
 
     <button type="submit" name="button">Login</button>
   </form>
