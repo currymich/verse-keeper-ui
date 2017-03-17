@@ -10,8 +10,16 @@ angular.module('verse-keeper', ['ui.router'])
     $urlRouterProvider.otherwise('/')
 
     $stateProvider
-    .state('index', {
+    .state('home', {
       url: '/',
       templateUrl: '/partials/home.html'
+    })
+    .state('login', {
+      url: '/login',
+      templateUrl: '/partials/login.html'
+    })
+    .state('signup', {
+      url: '/signup',
+      templateUrl: '/partials/signup.html'
     })
   }

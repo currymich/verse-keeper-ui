@@ -1,0 +1,29 @@
+<div ng-controller="AuthController as auth">
+
+  <form ng-submit="auth.signup(user)">
+    <label>Name
+      <input type="text" ng-model="user.name">
+    </label>
+
+    <label>Email
+      <input type="text" ng-model="user.email">
+    </label>
+
+    <label>Username
+      <input type="text" ng-model="user.username">
+    </label>
+
+    <label>Password
+      <input ng-hide="showPass" type="password" ng-model="user.password">
+      <input ng-show="showPass" type="text" ng-model="user.password">
+    </label>
+
+
+    <label>Show password:
+      <input type="checkbox" ng-model="showPass">
+    </label>
+
+    <button type="submit" name="button">Login</button>
+  </form>
+
+</div>
