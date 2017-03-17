@@ -12,24 +12,13 @@ function HomeController($scope, $http, $sce) {
     console.log(`User logged out from home controller`)
   })
 
-  function intervalCheck(){
-    if (self.interval == null){
-      //if no server pull has been made for VOTD, an interval will be set and the verse controller will be told to query the server
-      getVOTD()
+  getVOTD();
 
-      console.log('interval set')
-      self.interval = moment().add(1, 'minute')
-    } else if (self.interval.isBefore(moment())) {
-       //triggered if the duration since the last pull has passed (ie nextFetch is no longer after current time)
-      getVOTD()
+  var threeHours = 1000 * 60 * 60 * 3;
+  var checkUpdates = setInterval(function(){
+    getVOTD()
+  }, threeHours)
 
-      console.log('1 minute has passed!')
-      self.interval = moment().add(1, 'minute')
-      console.log('new interval set')
-    }
-  }
-
-  intervalCheck()
 
   function getVOTD(){
     $http.get(`${server}/verses/votd`)
