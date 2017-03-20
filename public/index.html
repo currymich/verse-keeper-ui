@@ -1,30 +1,30 @@
 <!DOCTYPE html>
-<html ng-app='verse-keeper'>
+<html ng-app='verse-keeper' ng-controller="HomeController as home">
   <head>
     <meta charset="utf-8">
     <title>Verse Keeper</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-sanitize.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.js"></script>
+    <script type="text/javascript" src="js/router.js"></script>
     <script type="text/javascript" src="js/factories/auth_interceptor.js"></script>
     <script type="text/javascript" src="js/factories/auth_token_factory.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/controllers/verse_controller.js"></script>
     <script type="text/javascript" src="js/controllers/home_controller.js"></script>
     <script type="text/javascript" src="js/controllers/auth_controller.js"></script>
-    <script type="text/javascript" src="js/controllers/verse_controller.js"></script>
-    <script type="text/javascript" src="js/router.js"></script>
-    <script type="text/javascript" src="js/app.js"></script>
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="/img/favicon.ico">
   </head>
-  <body ng-controller="HomeController as home">
+  <body ng-controller="VerseController as verses">
 
     <nav>
       <h1>Verse Keeper</h1>
-      <form ng-submit="verse.search(query)">
-        <input placeholder="Search by verse" ng-model="query">
+      <form ng-submit="verses.search()">
+        <input placeholder="Search by verse" ng-model="verses.query">
         <button type="submit">Search</button>
       </form>
-      <button ng-click="verse.fetchNow()">start</button>
       <a ui-sref="saved" href="#" ng-show="home.currentUser">Saved Verses</a>
       <a ng-hide="home.currentUser" ui-sref="login">Login</a>
       <a href="#" ng-show="home.currentUser" ng-controller="AuthController as auth" ng-click="auth.logout()">Logout</a>

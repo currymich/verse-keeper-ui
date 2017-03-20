@@ -1,7 +1,7 @@
-function HomeController($scope, $http, $sce) {
+angular.module('verse-keeper')
+.controller('HomeController', ['$scope', '$http', function($scope, $http){
   var self = this;
   var server = 'http://localhost:3000'
-  self.interval = null;
 
   $scope.$on('userLoggedIn', function(event, user){
     self.currentUser = user;
@@ -26,10 +26,8 @@ function HomeController($scope, $http, $sce) {
       var raw_verse = response.data.channel.item[0].content_encoded
       var cleaned_verse = raw_verse.split(/&[lr]dquo;/)[1]
       var verse_title = response.data.channel.item[0].title
-      var verse = `<h3>${verse_title}</h3><p>${cleaned_verse}</p>`
 
-      self.votd = $sce.trustAsHtml(verse)
+      self.votd = `<h3>${verse_title}</h3><p>${cleaned_verse}</p>`
     })
   }
-
-}
+}])

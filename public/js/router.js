@@ -1,4 +1,4 @@
-angular.module('verse-keeper', ['ui.router'])
+angular.module('verse-keeper', ['ui.router', 'ngSanitize'])
   .config(authInterceptor)
   .config(VerseRouter)
 

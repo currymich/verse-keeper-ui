@@ -1,4 +1,11 @@
-<div ng-controller="VerseController as verses">
-  <h3>Verse of the day:</h3>
-  <div ng-bind-html="home.votd"></div>
+<div>
+  <div ng-hide="verses.result">
+    <h3>Verse of the day:</h3>
+    <span ng-bind-html="home.votd"></span>
+  </div>
+
+  <div ng-show="verses.result">
+    <h3>Search results:</h3>
+    <span ng-bind-html="verses.result"></span>
+  </div>
 </div>

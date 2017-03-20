@@ -1,4 +1,5 @@
-function AuthController($http, $state, $scope,  AuthTokenFactory){
+angular.module('verse-keeper')
+.controller('AuthController', ['$http', '$scope', function($http, $scope, $state, AuthTokenFactory){
   var self = this;
   var server = 'http://localhost:3000'
 
@@ -40,4 +41,4 @@ function AuthController($http, $state, $scope,  AuthTokenFactory){
   self.logout = logout;
   self.login = login;
   self.signup = signup;
-}
+}])

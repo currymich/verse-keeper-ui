@@ -1,6 +1,3 @@
 angular.module('verse-keeper')
-  .controller('AuthController', AuthController)
-  .controller('HomeController', HomeController)
-  .controller('VerseController', VerseController)
   .factory('AuthTokenFactory', AuthTokenFactory)
   .factory('AuthInterceptor', AuthInterceptor)
