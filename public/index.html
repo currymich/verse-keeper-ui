@@ -16,14 +16,15 @@
     <script type="text/javascript" src="js/controllers/auth_controller.js"></script>
     <script type="text/javascript" src="js/controllers/notes_controller.js"></script>
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
     <link rel="icon" href="/img/favicon.ico">
   </head>
   <body ng-controller="VerseController as verses">
 
     <nav>
       <h1 ui-sref='home'>Verse Keeper</h1>
-      <form ng-submit="verses.search()">
-        <input placeholder="Search by verse" ng-model="verses.query">
+      <form id="verse_search" ng-submit="verses.search()">
+        <input placeholder="John 3 16" ng-model="verses.query">
         <button type="submit">Search</button>
       </form>
       <a ng-click="verses.user_verses(home.currentUser)" ng-show="home.currentUser">Saved Verses</a>

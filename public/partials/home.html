@@ -1,11 +1,11 @@
 <div>
-  <div ng-hide="verses.result">
-    <h3>Verse of the day:</h3>
+  <div class="verse" ng-hide="verses.result">
+    <h2>Verse of the day:</h2>
     <span ng-bind-html="home.votd"></span>
   </div>
 
   <div ng-show="verses.result">
-    <h3>Search results:</h3>
+    <h2>Search results:</h2>
     <span ng-bind-html="verses.result"></span>
     <button ng-click="verses.save(home.currentUser)">Save</button>
   </div>

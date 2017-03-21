@@ -6,7 +6,7 @@
     </label>
 
     <label>Email
-      <input type="text" ng-model="user.email" required>
+      <input type="email" ng-model="user.email" required>
     </label>
 
     <label>Username
@@ -18,10 +18,10 @@
       <input ng-show="showPass" type="text" ng-model="user.password">
     </label>
 
-
-    <label>Show password:
-      <input type="checkbox" ng-model="showPass">
-    </label>
+    <div>
+      <label>
+        <input name="show_pass" type="checkbox" ng-model="showPass"> Show Password</label>
+    </div>
 
     <button type="submit" name="button">Login</button>
   </form>

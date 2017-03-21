@@ -1,4 +1,4 @@
-<div ng-repeat="verse in verses.saved_verses">
+<div class="verse" ng-repeat="verse in verses.saved_verses">
   <h3 style="text-transform: capitalize">{{verse.reference}}</h3>
   <p ng-bind-html="verse.text"></p>
   <button ng-click="verses.verse_notes(verse.id)">Show Notes</button>

@@ -6,11 +6,125 @@
 
 body {
   font-size: 20px;
+  color: #444;
+  font-family: 'Roboto', sans-serif;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: underline;
+  color: #444;
+}
+
+ui-view form {
+  width: 40vw;
+  max-width: 300px;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 1em;
+  align-items: center;
+}
+
+ui-view form > * {
+  margin: 0.75em;
+}
+
+ui-view form input {
+  width: 100%;
+}
+
+ui-view form > button {
+  width: 50%;
+}
+
+input {
+  border-radius: 5px;
+  font-size: 0.75em;
+  padding: 0.25em;
+}
+
+ui-view form input[type=checkbox] {
+  width: 10px;
+  margin: 0.5em;
+}
+
+button {
+  border-radius: 7.5px;
+  background: lightblue;
+  font-size: 0.75em;
+  margin: 0 1em;
+  padding: 0.25em 0.75em;
+  cursor: pointer;
 }
 
 nav {
   display: flex;
   flex-flow: row;
   justify-content: space-between;
-  width: 100%;
+  width: 100vw;
+  align-items: center;
+  padding: 25px;
+}
+
+nav h1 {
+  font-size: 2.0em;
+  cursor: pointer;
+}
+
+.verse {
+  width: 75vw;
+  margin: 1.5em auto;
+  padding: 0.5em 2em;
+  text-align: justify;
+  border: 1px solid #888;
+  border-radius: 3px;
+  background: #eee;
+  line-height: 1.5em;
+  max-width: 800px;
+}
+
+.verse > * {
+  margin: 0.5em 0;
+}
+
+.note_container {
+  width: 60vw;
+  margin: 1em auto;
+  margin-top: 2em;
+  padding: 0.5em 2em;
+  text-align: justify;
+  border: 1px solid #888;
+  border-radius: 3px;
+  background: #eee;
+  line-height: 1.5em;
+  max-width: 600px;
+}
+
+.note_container * {
+  padding: 0.25em 0.75em;
+  margin: 0.25em;
+}
+
+.note_container button {
+  margin-left: 1.5em;
+}
+
+.note {
+  width: 80%;
+  background: #ccc;
+  color: #222;
+  border: 1px solid #888;
+  border-radius: 3px;
+  display: flex;
+  flex-flow: column;
+}
+
+.note * {
+  padding: 0.25em 0.75em;
+  margin: 0.25em;
+}
+
+.note button:first-of-type {
+  margin-left: 0;
 }
