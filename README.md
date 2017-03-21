@@ -2,8 +2,11 @@
 Angular/Node/Express front-end for verse-keeper
 
 Application for searching, saving and marking up bible passages. 
+
 Search by verse - "John 3 16" or "John 3 16-17"
+
 Search by chapter - "John 3"
+
 
 [Live site](https://verse-keeper-ui.herokuapp.com/)
 
