@@ -14,18 +14,19 @@
     <script type="text/javascript" src="js/controllers/verse_controller.js"></script>
     <script type="text/javascript" src="js/controllers/home_controller.js"></script>
     <script type="text/javascript" src="js/controllers/auth_controller.js"></script>
+    <script type="text/javascript" src="js/controllers/notes_controller.js"></script>
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="/img/favicon.ico">
   </head>
   <body ng-controller="VerseController as verses">
 
     <nav>
-      <h1>Verse Keeper</h1>
+      <h1 ui-sref='home'>Verse Keeper</h1>
       <form ng-submit="verses.search()">
         <input placeholder="Search by verse" ng-model="verses.query">
         <button type="submit">Search</button>
       </form>
-      <a ui-sref="saved" href="#" ng-show="home.currentUser">Saved Verses</a>
+      <a ng-click="verses.user_verses(home.currentUser)" ng-show="home.currentUser">Saved Verses</a>
       <a ng-hide="home.currentUser" ui-sref="login">Login</a>
       <a href="#" ng-show="home.currentUser" ng-controller="AuthController as auth" ng-click="auth.logout()">Logout</a>
     </nav>

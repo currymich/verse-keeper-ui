@@ -1,5 +1,5 @@
 angular.module('verse-keeper')
-.controller('AuthController', ['$http', '$scope', function($http, $scope, $state, AuthTokenFactory){
+.controller('AuthController', ['$http', '$scope', '$state', 'AuthTokenFactory', function($http, $scope, $state, AuthTokenFactory){
   var self = this;
   var server = 'http://localhost:3000'
 
@@ -7,7 +7,7 @@ angular.module('verse-keeper')
     $http.post(`${server}/users/login`, {user})
     .then(function(response){
       if(response.data.status == 201){
-        console.log(response.data.message)
+        console.log(response.data)
         AuthTokenFactory.setToken(response.data.token)
         $scope.$emit('userLoggedIn', response.data.user);
         $state.go('home')

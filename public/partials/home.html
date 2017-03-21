@@ -7,5 +7,6 @@
   <div ng-show="verses.result">
     <h3>Search results:</h3>
     <span ng-bind-html="verses.result"></span>
+    <button ng-click="verses.save(home.currentUser)">Save</button>
   </div>
 </div>

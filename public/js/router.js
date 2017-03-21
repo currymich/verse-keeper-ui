@@ -22,4 +22,12 @@ angular.module('verse-keeper', ['ui.router', 'ngSanitize'])
       url: '/signup',
       templateUrl: '/partials/signup.html'
     })
+    .state('saved_verses', {
+      url: '/user/:user_id/verses',
+      templateUrl: '/partials/saved_verses.html'
+    })
+    .state('verse_notes', {
+      url: '/verse/:verse_id/notes',
+      templateUrl: '/partials/verse_notes.html'
+    })
   }
