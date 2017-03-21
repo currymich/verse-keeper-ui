@@ -1,6 +1,9 @@
 # Verse Keeper UI
 Angular/Node/Express front-end for verse-keeper
-https://verse-keeper-ui.herokuapp.com/
+
+[Live site](https://verse-keeper-ui.herokuapp.com/)
+
+[Backend repo](https://github.com/currymich/verse-keeper-api)
 
 ## ERD
 
