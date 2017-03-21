@@ -2,7 +2,7 @@ angular.module('verse-keeper')
 .controller('NotesController', ['$http', '$state', '$scope',
 function($http, $state, $scope){
   var self = this;
-  var server = 'https://verse-keeper-api.herokuapp.com'
+  var server = 'http://localhost:3000'
 
 
   function new_note(verse_id){

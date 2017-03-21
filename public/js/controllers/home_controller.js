@@ -1,7 +1,7 @@
 angular.module('verse-keeper')
 .controller('HomeController', ['$scope', '$http', function($scope, $http){
   var self = this;
-  var server = 'https://verse-keeper-api.herokuapp.com'
+  var server = 'http://localhost:3000'
 
   $scope.$on('userLoggedIn', function(event, user){
     self.currentUser = user;

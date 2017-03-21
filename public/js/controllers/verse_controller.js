@@ -1,7 +1,7 @@
 angular.module('verse-keeper')
 .controller('VerseController', ['$scope', '$http', '$state', function($scope, $http, $state){
   var self = this;
-  var server = 'https://verse-keeper-api.herokuapp.com'
+  var server = 'http://localhost:3000'
 
   function search(){
     var url = self.query.split(' ')
