@@ -1,7 +1,7 @@
 angular.module('verse-keeper')
 .controller('AuthController', ['$http', '$scope', '$state', 'AuthTokenFactory', function($http, $scope, $state, AuthTokenFactory){
   var self = this;
-  var server = 'http://localhost:3000'
+  var server = process.env.RAILS_SERVER || 'http://localhost:3000'
 
   function login(user){
     $http.post(`${server}/users/login`, {user})

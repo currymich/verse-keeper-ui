@@ -2,7 +2,7 @@ angular.module('verse-keeper')
 .controller('NotesController', ['$http', '$state', '$scope',
 function($http, $state, $scope){
   var self = this;
-  var server = 'http://localhost:3000'
+  var server = process.env.RAILS_SERVER || 'http://localhost:3000'
 
 
   function new_note(verse_id){
