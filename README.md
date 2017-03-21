@@ -1,5 +1,6 @@
-# Verse Keeper API
-Rails backend for verse-keeper
+# Verse Keeper UI
+Angular/Node/Express front-end for verse-keeper
+https://verse-keeper-ui.herokuapp.com/
 
 ## ERD
 
